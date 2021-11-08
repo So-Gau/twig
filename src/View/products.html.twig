@@ -9,6 +9,14 @@
 </head>
 
 <body>
-    <h1>Hello {{ name }} !</h1>
+    
+    {% for product in products %}
+        {% if loop.index0 % 3 == 0 and loop.index0 %}
+            <br>
+        {% endif %}
+        <span id="product{{ loop.index }}">{{ product }}</span>
+    {% endfor %}
+    <div>{{ dump(products) }}</div>
+
 </body>
 </html>
